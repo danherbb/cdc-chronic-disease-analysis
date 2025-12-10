@@ -33,7 +33,7 @@ cdc-chronic-disease-analysis/
 │   └── analysis_queries.sql
 │
 ├── tableau/
-│   ├── dashboard.twb
+│   ├── cdi_dashboard.twb
 │   └── cdi_dashboard.png
 │
 └── README.md
