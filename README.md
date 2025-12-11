@@ -11,7 +11,7 @@ This project examines age-adjusted prevalences of obesity, diabetes and low phys
 The interactive dashboard can be viewed:
 
 - **Online**: [Tableau Public](https://public.tableau.com/app/profile/daniel.de.oliveira4431/viz/cdi/cdi_dashboard)
-- **Locally**: Open `tableau/cdi_dashboard.twb` in Tableau Desktop
+- **Locally**: Open `tableau/cdi.twbx` in Tableau Desktop
 
 ## Project Structure
 
