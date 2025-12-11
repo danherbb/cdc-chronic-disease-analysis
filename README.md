@@ -10,7 +10,7 @@ This project examines age-adjusted prevalences of obesity, diabetes and low phys
 
 The interactive dashboard can be viewed:
 
-- **Online**: [Tableau Public](https://public.tableau.com/app/profile/daniel.de.oliveira4431/viz/cdi/Dashboard1)
+- **Online**: [Tableau Public](https://public.tableau.com/app/profile/daniel.de.oliveira4431/viz/cdi/cdi_dashboard)
 - **Locally**: Open `tableau/cdi_dashboard.twb` in Tableau Desktop
 
 ## Project Structure
@@ -24,16 +24,15 @@ cdc-chronic-disease-analysis/
 │   └── processed/
 │       ├── state_obesity_diabetes.csv
 │       ├── state_ob_di_by_sex.csv
-│       ├── natl_ob_di_by_sex.csv
 │       ├── state_no_pa.csv
-│       └── natl_no_pa_by_sex.csv
+│       └── natl_indicators_by_sex.csv
 │
 ├── sql/
 │   ├── exploratory_queries.sql
 │   └── analysis_queries.sql
 │
 ├── tableau/
-│   ├── cdi_dashboard.twb
+│   ├── cdi.twbx
 │   └── cdi_dashboard.png
 │
 └── README.md
