@@ -103,19 +103,19 @@ COPY (
     SELECT * FROM ob_di_by_sex WHERE state IN (SELECT states FROM us_states)
 ) TO 'data/processed/state_ob_di_by_sex.csv';
 
-COPY (
-    (
-        SELECT YearEnd AS year, 'obesity' AS indicator, sex, prevalence
-        FROM adult_obesity_by_sex
-        WHERE LocationDesc = 'United States'
-    ) 
-    UNION 
-    (
-        SELECT YearEnd AS year, 'diabetes' AS indicator, sex, prevalence
-        FROM adult_diabetes_by_sex
-        WHERE LocationDesc = 'United States'
-    )
-) TO 'data/processed/natl_ob_di_by_sex.csv';
+-- COPY (
+--     (
+--         SELECT YearEnd AS year, 'obesity' AS indicator, sex, prevalence
+--         FROM adult_obesity_by_sex
+--         WHERE LocationDesc = 'United States'
+--     ) 
+--     UNION 
+--     (
+--         SELECT YearEnd AS year, 'diabetes' AS indicator, sex, prevalence
+--         FROM adult_diabetes_by_sex
+--         WHERE LocationDesc = 'United States'
+--     )
+-- ) TO 'data/processed/natl_ob_di_by_sex.csv';
 
 /*
 Chapter 3 - Physical Activity as a Possible Explanatory Factor
@@ -140,11 +140,25 @@ COPY (
 ) TO 'data/processed/state_no_pa.csv';
 
 COPY (
-    SELECT YearEnd AS year, 'no physical activity' AS indicator, Stratification1 AS sex, DataValue AS prevalence
-    FROM cdi
-    WHERE
-        LocationDesc = 'United States'
-        AND QuestionID = 'NPW06'
-        AND StratificationCategory1 = 'Sex'
-        AND DataValueTypeID = 'AGEADJPREV'
-) TO 'data/processed/natl_no_pa_by_sex.csv';
+    (
+        SELECT YearEnd AS year, 'no physical activity' AS indicator, Stratification1 AS sex, DataValue AS prevalence
+        FROM cdi
+        WHERE
+            LocationDesc = 'United States'
+            AND QuestionID = 'NPW06'
+            AND StratificationCategory1 = 'Sex'
+            AND DataValueTypeID = 'AGEADJPREV'
+    )
+    UNION
+    (
+        SELECT YearEnd AS year, 'obesity' AS indicator, sex, prevalence
+        FROM adult_obesity_by_sex
+        WHERE LocationDesc = 'United States'
+    ) 
+    UNION 
+    (
+        SELECT YearEnd AS year, 'diabetes' AS indicator, sex, prevalence
+        FROM adult_diabetes_by_sex
+        WHERE LocationDesc = 'United States'
+    )
+) TO 'data/processed/natl_indicators_by_sex.csv';
