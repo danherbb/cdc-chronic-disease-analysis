@@ -78,4 +78,4 @@ Ensure that the working directory in which the command is run contains `data/raw
 
 ### Author
 
-**Daniel De Oliveira** | [GitHub](https://github.com/danherbb)
+**Daniel De Oliveira** | [GitHub](https://github.com/danherbb) | [LinkedIn](https://www.linkedin.com/in/daniel-de-oliveira-0b50082b3/)
